@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'books/new'
-  get 'books/index'
-  get 'books/show'
-  get 'books/edit'
+  get 'index'=>'books#index'
+  get 'show'=>'books#show'
+  get 'edit'=>'books#edit'
   get 'rails/controller'
   get 'rails/books'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
