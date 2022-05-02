@@ -4,10 +4,8 @@
 
 
  <table>
-
-
-
-   　<thead>
+  
+  <thead>
 
    　<tr>
 
@@ -19,7 +17,7 @@
 
    　</tr>
 
-   </thead>
+  </thead>
 
    <tbody>
 
@@ -51,20 +49,32 @@
    　</td>
 
    　</tr>
-
-
-
-   　<%end%>
+   　
+     <%end%>
 
     </tbody>
 
  　</table>
-
- <%= form_with model:@book, url: '/books', method: :post do |f| %>
-
+ 　
  <h2>New book</h2>
-
-
+ 　
+ <% if @book.errors.any? %>
+ 
+  <%= @book.errors.count %>のエラーが発生しました。
+  
+  <ul>
+   
+   <% @book.errors.full_messages.each do |message| %>
+   
+   <li><%= message %></li>
+   
+   <%end%>
+   
+  </ul>
+  
+  <%end%>
+ 　
+ <%= form_with model:@book, url: '/books', method: :post do |f| %>
 
   <label>Title</label>
 
