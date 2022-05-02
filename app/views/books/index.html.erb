@@ -60,7 +60,7 @@
  　
  <% if @book.errors.any? %>
  
-  <%= @book.errors.count %>のエラーが発生しました。
+  <%= @book.errors.count %> ERROR!!
   
   <ul>
    
@@ -97,6 +97,16 @@
    <%= f.submit"Create Book"%>
 
   </div>
+  
+  <% if flash[:notice]%>
+  
+   <p id="notice">
+    
+    <%= flash[:notice]%>
+    
+   </p>
+  
+  <%end%>
 
 <%end%>
 

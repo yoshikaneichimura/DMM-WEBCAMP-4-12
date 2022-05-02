@@ -16,3 +16,13 @@
 |
 
 <%=link_to"Back",books_path%>
+
+<% if flash[:notice]%>
+
+ <p id="notice">
+    
+    <%= flash[:notice]%>
+    
+ </p>
+ 
+<%end%>

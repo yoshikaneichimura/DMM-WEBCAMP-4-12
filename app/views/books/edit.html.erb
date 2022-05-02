@@ -1,5 +1,21 @@
 <h1>Editing Book</h1>
 
+<% if @book.errors.any? %>
+ 
+  <%= @book.errors.count %> ERROR!!
+  
+  <ul>
+   
+   <% @book.errors.full_messages.each do |message| %>
+   
+   <li><%= message %></li>
+   
+   <%end%>
+   
+  </ul>
+  
+ <%end%>
+
 <%= form_with model: @book,url: book_path(@book.id),method: :patch do |f| %>
 
 <label>Title</label>
@@ -24,10 +40,22 @@
 
 </div>
 
+
+
 <%=link_to"Show",book_path(@book.id)%>
 
 |
 
 <%=link_to"Back",books_path%>
+
+<% if flash[:notice]%>
+
+ <p id="notice">
+    
+    <%= flash[:notice]%>
+    
+ </p>
+ 
+ <%end%>
 
 <%end%>
