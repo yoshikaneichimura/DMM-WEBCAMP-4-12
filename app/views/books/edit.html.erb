@@ -1,19 +1,19 @@
-<h1>Editing Book</h1>
+<h1 class="editing">Editing Book</h1>
 
 <% if @book.errors.any? %>
- 
+
   <%= @book.errors.count %> error !!
-  
+
   <ul>
-   
+
    <% @book.errors.full_messages.each do |message| %>
-   
+
    <li><%= message %></li>
-   
+
    <%end%>
-   
+
   </ul>
-  
+
  <%end%>
 
 <%= form_with model: @book,url: book_path(@book.id),method: :patch do |f| %>
@@ -51,11 +51,11 @@
 <% if flash[:notice]%>
 
  <p id="notice">
-    
+
     <%= flash[:notice]%>
-    
+
  </p>
- 
+
  <%end%>
 
 <%end%>
